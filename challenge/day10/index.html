@@ -1,0 +1,30 @@
+<!--
+Seorang pengembang membuat aplikasi To-Do List sederhana menggunakan HTML, CSS, dan JavaScript. Aplikasi ini memungkinkan pengguna untuk:
+1. Menambah tugas baru ke daftar.
+2. Menghapus tugas yang sudah selesai.
+Namun, pengembang melaporkan beberapa bug berikut:
+1. Tombol "Tambah Tugas" tidak berfungsi.
+2. Tombol "Hapus" pada setiap tugas tidak berfungsi.
+3. Tidak ada validasi saat input kosong: Ketika tombol "Tambah Tugas" diklik tanpa mengisi apa pun, aplikasi tidak menampilkan pesan kesalahan atau peringatan.
+Tidak ada validasi saat input kosong:
+Ketika tombol "Tambah Tugas" diklik tanpa mengisi apa pun, aplikasi tidak menampilkan pesan kesalahan atau peringatan.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-Do List App</title>
+        <link rel="stylesheet" href="./assets/css/globals.css" type="text/css" />
+    </head>
+    <body>
+        <div class="container">
+            <h2>To-Do List</h2>
+            <input type="text" id="taskInput" placeholder="Masukkan tugas baru">
+            <button id="addTaskBtn">Tambah Tugas</button>
+            <ul id="taskList"></ul>
+        </div>
+        <script src="./assets/js/index.js" type="text/javascript"></script>
+    </body>
+</html>

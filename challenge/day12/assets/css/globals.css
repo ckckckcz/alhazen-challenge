@@ -1,0 +1,46 @@
+/* Styling untuk body */
+body {
+    font-family: Arial, sans-serif; /* 1. gunakan font Arial & sans-serif */
+    text-align: center; /* 2. buat text berada di tengah */
+    background-color: white; /* 3. warna background putih */
+    margin: 20px;
+}
+
+/* Styling untuk judul */
+h1 {
+    color: black; /* warna judul hitam */
+}
+
+/* Styling untuk tabel */
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* berikan box shadow */
+}
+
+/* Styling untuk header tabel */
+th {
+    background-color: black; /* berikan background berwarna hitam */
+    color: white; /* berikan warna text putih */
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Styling untuk sel tabel */
+td {
+    padding: 10px;
+    border: 1px solid #ddd; /* berikan garis solid setebal 1px */
+}
+
+/* Buat warna berbeda khusus untuk baris ganjil saja */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Tambahkan efek melayang (hover effect) pada baris tabel */
+tbody tr:hover {
+    background-color: #ddd;
+    transition: 0.3s;
+}

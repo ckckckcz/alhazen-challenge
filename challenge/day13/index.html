@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="./assets/style/globals.css">
+</head>
+<body>
+
+    <h1>Formulir Pendaftaran</h1>
+
+    <form action="#" method="POST">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" placeholder="isi nama lengkap..." required>
+      
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="email@contoh.com" required>
+      
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+      
+        <!-- Jenis Kelamin menggunakan radio berisi pilihan
+          -pria
+          -wanita
+        -->
+        <label>Jenis Kelamin:</label>
+        <div class="radio-group">
+            <div>
+                <input type="radio" id="pria" name="jenis_kelamin" value="pria" required>
+                <label for="pria">Pria</label>
+            </div>
+            <div>
+                <input type="radio" id="wanita" name="jenis_kelamin" value="wanita">
+                <label for="wanita">Wanita</label>
+            </div>
+        </div>
+
+        <!-- Tanggal Lahir -->
+        <label for="tanggal_lahir">Tanggal Lahir:</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+
+        <!-- Kota Asal -->
+        <label for="kota">Kota Asal:</label>
+        <!-- Gunakan select option untuk kota asal:
+        -Jakarta
+        -Surabaya
+        -Surakarta
+        -Bandung
+        -Lainnya (berikan input text)
+        -->
+        <select id="kota" name="kota" onchange="showOtherCity()" required>
+            <option value="">Pilih Kota</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Surabaya">Surabaya</option>
+            <option value="Surakarta">Surakarta</option>
+            <option value="Bandung">Bandung</option>
+            <option value="lainnya">Lainnya</option>
+        </select>
+        <div id="other-city" style="display: none;">
+            <label for="kota_lainnya">Sebutkan Kota:</label>
+            <input type="text" id="kota_lainnya" name="kota_lainnya" placeholder="Masukkan nama kota">
+        </div>
+      
+        <!-- Pesan -->
+        <label for="pesan">Pesan:</label>
+        <!-- Gunakan textarea -->
+        <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan anda di sini..."></textarea>
+
+        <!-- Tombol Submit -->
+        <button type="submit">Daftar</button>
+    </form>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>

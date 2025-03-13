@@ -42,6 +42,12 @@ input, select, textarea {
     box-sizing: border-box;
 }
 
+textarea {
+    max-width: 100%;
+    resize: vertical;
+    min-height: 80px;
+}
+
 /* Styling untuk radio button */
 .radio-group {
     display: flex;
@@ -82,7 +88,6 @@ button:hover {
     transition: background-color 0.3s;
 }
 
-/* Berikan validasi form input yang belum diisi berwarna merah */
 input:invalid:not(:placeholder-shown),
 select:invalid:not(:placeholder-shown),
 textarea:invalid:not(:placeholder-shown) {

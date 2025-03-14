@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News - Berita Teknologi Terkini</title>
+    <meta name="description" content="Portal berita teknologi terkini dengan informasi seputar AI, gadget, internet, dan startup">
+    
+    <!-- Tailwind CSS Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#0ea5e9',
+                            dark: '#0284c7',
+                        },
+                        secondary: {
+                            DEFAULT: '#10b981',
+                            dark: '#059669',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Base Styles -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- ======= Header Section ======= -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="text-xl font-bold text-gray-800">Tech News</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="text-gray-600 hover:text-gray-900">Beranda</a>
+                <a href="/ai" class="text-gray-600 hover:text-gray-900">AI</a>
+                <a href="/gadget" class="text-gray-600 hover:text-gray-900">Gadget</a>
+                <a href="/internet" class="text-gray-600 hover:text-gray-900">Internet</a>
+                <a href="/startup" class="text-gray-600 hover:text-gray-900">Startup</a>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======= Main Content ======= -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- ======= Main Content Area (75%) ======= -->
+            <div class="lg:w-3/4">
+                <!-- Featured Article -->
+                <article class="mb-12">
+                    <div class="relative h-80 w-full mb-4 overflow-hidden rounded-lg">
+                        <img src="https://placehold.co/1200x600/000000/ffffff/png?text=AI+Technology" alt="AI Technology" class="object-cover w-full h-full">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-2">Revolusi Kecerdasan Buatan</h1>
+                    <p class="text-sm text-gray-500 mb-4">Jumat, 14 Maret 2025</p>
+                    <p class="text-gray-700 mb-4">Perkembangan kecerdasan buatan semakin pesat...</p>
+                    <a href="/article/ai-revolution" class="text-black border-b-2 border-black pb-1">Baca Selengkapnya</a>
+                </article>
+
+                <!-- Secondary Articles Grid -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Article 1 -->
+                    <article class="bg-white rounded-lg overflow-hidden shadow-sm">
+                        <div class="relative h-48 w-full">
+                            <img 
+                                src="https://placehold.co/600x400/1a1a1a/0ea5e9/png?text=Quantum+Computing" 
+                                alt="Quantum Computing" 
+                                class="object-cover w-full h-full"
+                            />
+                        </div>
+                        <div class="p-4">
+                            <h2 class="text-xl font-semibold mb-2">Kemajuan Komputasi Kuantum</h2>
+                            <p class="text-gray-700 text-sm mb-3">
+                                Salah satu inovasi terbesar dalam dunia teknologi adalah komputasi kuantum. 
+                                Perusahaan teknologi besar seperti Google, IBM, dan Microsoft terus mengembangkan 
+                                komputer kuantum yang mampu memproses data dengan kecepatan jauh lebih tinggi 
+                                dibandingkan komputer konvensional.
+                            </p>
+                            <a href="/article/quantum-computing" class="text-blue-500 hover:underline text-sm">
+                                Baca Selengkapnya
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="bg-white rounded-lg overflow-hidden shadow-sm">
+                        <div class="relative h-48 w-full">
+                            <img 
+                                src="https://placehold.co/600x400/1a1a1a/0ea5e9/png?text=Digital+Economy" 
+                                alt="Digital Economy" 
+                                class="object-cover w-full h-full"
+                            />
+                        </div>
+                        <div class="p-4">
+                            <h2 class="text-xl font-semibold mb-2">Peran Internet dalam Ekonomi Digital</h2>
+                            <p class="text-gray-700 text-sm mb-3">
+                                Internet juga menjadi motor utama dalam pertumbuhan ekonomi digital. 
+                                E-commerce, layanan streaming, dan transaksi keuangan digital semakin meningkat setiap tahun. 
+                                Dengan berbasis internet, seperti startup teknologi dan platform digital, 
+                                terus berkembang pesat dan menciptakan peluang baru di berbagai sektor.
+                            </p>
+                            <a href="/article/internet-economy" class="text-blue-500 hover:underline text-sm">
+                                Baca Selengkapnya
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- ======= Sidebar (25%) ======= -->
+            <aside class="lg:w-1/4">
+                <!-- Popular News Section -->
+                <div class="bg-white p-4 rounded-lg shadow-sm mb-6">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800 border-b pb-2">Berita Populer</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/article/robot-industry" class="text-blue-500 hover:underline text-sm">
+                                Robot dan Otomasi di Industri Manufaktur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/article/vr-technology" class="text-blue-500 hover:underline text-sm">
+                                Perkembangan dan VR
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/article/quantum-computing" class="text-blue-500 hover:underline text-sm">
+                                Terobosan dalam Komputasi Kuantum
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Advertisement Section -->
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <h3 class="text-sm font-medium text-gray-500 mb-2">Iklan</h3>
+                    <div class="bg-teal-100 rounded-lg p-4 text-left">
+                        <div class="text-teal-500 font-bold text-xl mb-2">
+                            KELAS CODING PRIVATE ANAK DI RUMAH KAMU!
+                        </div>
+                        <div class="text-teal-600 font-medium mb-3">Penawaran Kelas Private:</div>
+                        
+                        <!-- Features List -->
+                        <ul class="text-left text-sm mb-4 space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-teal-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Belajar dengan Guru Berpengalaman</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-teal-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Kurikulum Terkini</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-teal-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Jadwal Fleksibel</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="text-teal-600 font-medium mb-2">Pesan Kelas Private Gratis!</div>
+                        <div class="flex justify-left">
+                            <div class="bg-white p-2 rounded-lg">
+                                <div class="h-16 w-16 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">
+                                    QR Code
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ======= Footer Section ======= -->
+    <footer class="bg-white py-4 border-t mt-12">
+        <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
+            © 2025 Tech News
+        </div>
+    </footer>
+
+    <!-- ======= JavaScript ======= -->
+    <script>
+        /**
+         * Mobile Menu Toggle Functionality
+         * Toggles the visibility of the navigation menu on mobile devices
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('header button');
+            const nav = document.querySelector('header nav');
+            
+            menuButton.addEventListener('click', function() {
+                if (nav.classList.contains('hidden')) {
+                    // Show mobile menu
+                    nav.classList.remove('hidden');
+                    nav.classList.add(
+                        'flex', 
+                        'flex-col', 
+                        'absolute', 
+                        'top-16', 
+                        'left-0', 
+                        'right-0', 
+                        'bg-white', 
+                        'p-4', 
+                        'shadow-md', 
+                        'z-50'
+                    );
+                } else {
+                    // Hide mobile menu
+                    nav.classList.add('hidden');
+                    nav.classList.remove(
+                        'flex', 
+                        'flex-col', 
+                        'absolute', 
+                        'top-16', 
+                        'left-0', 
+                        'right-0', 
+                        'bg-white', 
+                        'p-4', 
+                        'shadow-md', 
+                        'z-50'
+                    );
+                }
+            });
+        });
+    </script>
+</body>
+</html>

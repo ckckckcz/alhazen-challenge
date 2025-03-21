@@ -16,10 +16,9 @@ const products = [
       "Windows 11 Home",
     ],
     images: [
-      "/placeholder.svg?height=500&width=500",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
+      "https://images.tokopedia.net/img/cache/700/OJWluG/2022/3/24/548ef113-01dd-4d2b-89c6-65dfcae8d4b7.jpg.webp?ect=4g",
+      "https://images.tokopedia.net/img/cache/700/OJWluG/2022/3/24/df66dd9b-3271-4582-bb9f-2c5305b72e66.jpg.webp?ect=4g",
+      "https://images.tokopedia.net/img/cache/700/OJWluG/2022/3/24/75a103a3-915a-422a-bf19-970b9e70d861.jpg.webp?ect=4g",
     ],
   },
   {
@@ -38,10 +37,9 @@ const products = [
       "Windows 11 Home",
     ],
     images: [
-      "/placeholder.svg?height=500&width=500",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
+      "https://images.tokopedia.net/img/cache/700/attachment/2021/10/13/162839454/162839454_b941d531-da80-40ef-8daa-fe0d8803a5f6.jpg.webp?ect=4g",
+      "https://images.tokopedia.net/img/cache/700/attachment/2021/10/13/162839454/162839454_5c9f9413-5317-4d61-bbdb-27d746767981.jpg.webp?ect=4g",
+      "https://images.tokopedia.net/img/cache/700/attachment/2021/10/13/162839454/162839454_4a82a698-e162-4697-a2c6-bfb1cd88a791.jpg.webp?ect=4g",
     ],
   },
   {
@@ -60,10 +58,9 @@ const products = [
       "Windows 11 Home",
     ],
     images: [
-      "/placeholder.svg?height=500&width=500",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
+      "https://images.tokopedia.net/img/cache/700/OJWluG/2024/1/4/81525f00-ffc2-47ff-829a-b3682716312f.jpg.webp?ect=4g",
+      "https://images.tokopedia.net/img/cache/700/OJWluG/2024/1/4/ed233837-e6d8-4bcd-a146-f2d0cce35533.jpg.webp?ect=4g",
+      "https://images.tokopedia.net/img/cache/700/OJWluG/2024/1/8/ceed80cb-cbe0-4109-8a17-1939511e66d8.jpg.webp?ect=4g",
     ],
   },
   {
@@ -82,10 +79,9 @@ const products = [
       "Windows 11 Home",
     ],
     images: [
-      "/placeholder.svg?height=500&width=500",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
-      "/placeholder.svg?height=100&width=100",
+      "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/3/26/bcea6dd7-5b32-44e6-a433-50d2f023c9aa.jpg",
+      "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/3/26/77479273-36f7-4407-9b90-8205c66672b8.jpg",
+      "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/3/26/7b6d3cb4-a123-47b2-9637-24c03b76d9e8.jpg",
     ],
   },
 ]
@@ -140,6 +136,13 @@ function loadProductDetails() {
   document.getElementById("product-description").textContent = product.description
   document.getElementById("product-main-image").src = product.images[0]
   document.getElementById("product-main-image").alt = product.name
+
+  // Set thumbnail images
+  const thumbnails = document.querySelectorAll(".thumbnail-images img")
+  for (let i = 0; i < thumbnails.length && i < product.images.length; i++) {
+    thumbnails[i].src = product.images[i]
+    thumbnails[i].alt = `${product.name} - Gambar ${i + 1}`
+  }
 
   const featuresList = document.getElementById("product-features")
   featuresList.innerHTML = ""
@@ -411,10 +414,12 @@ function goToStep(step) {
     }
   })
 
+  // Update payment summary when going to payment step
   if (step === 3) {
     updateCartSummary()
   }
 
+  // Scroll to top of the section
   window.scrollTo({
     top: document.querySelector(".checkout-steps").offsetTop - 100,
     behavior: "smooth",
@@ -428,6 +433,7 @@ function updateCartCount() {
   cartCountElements.forEach((element) => {
     element.textContent = itemCount
 
+    // Add animation effect when cart count changes
     element.classList.add("pulse")
     setTimeout(() => {
       element.classList.remove("pulse")
@@ -542,15 +548,20 @@ function validatePaymentAndProceed() {
     if (isValid) {
       goToStep(4)
     } else {
+      // Scroll ke error pertama
       const firstError = form.querySelector(".form-group.error")
       if (firstError) {
         firstError.scrollIntoView({ behavior: "smooth", block: "center" })
       }
+
+      // Tampilkan pesan error umum
       showNotification("Mohon lengkapi data kartu kredit dengan benar", "error")
     }
   } else if (isBankTransfer) {
+    // Untuk transfer bank, tidak perlu validasi tambahan
     goToStep(4)
   } else {
+    // Jika tidak ada metode pembayaran yang dipilih
     showNotification("Silakan pilih metode pembayaran", "error")
   }
 }
@@ -583,9 +594,9 @@ function showNotification(message, type = "success") {
   }, 3000)
 }
 
-// Tambahkan event listener untuk validasi
+// Tambahkan event listener untuk validasi real-time
 document.addEventListener("DOMContentLoaded", () => {
-  // Validasi untuk form pengiriman
+  // Validasi real-time untuk form pengiriman
   const shippingForm = document.getElementById("shipping-form")
   if (shippingForm) {
     const inputs = shippingForm.querySelectorAll("input[required], select[required]")
@@ -604,7 +615,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Validasi untuk form pembayaran
+  // Validasi real-time untuk form pembayaran
   const paymentForm = document.getElementById("payment-form")
   if (paymentForm) {
     const inputs = paymentForm.querySelectorAll("#credit-card-form input[required]")
@@ -696,6 +707,7 @@ function validateInput(input) {
   return isValid
 }
 
+// Add this to the CSS
 document.head.insertAdjacentHTML(
   "beforeend",
   `
@@ -751,6 +763,7 @@ document.head.insertAdjacentHTML(
 `,
 )
 
+// Tambahkan CSS untuk notifikasi
 document.head.insertAdjacentHTML(
   "beforeend",
   `
@@ -793,3 +806,4 @@ document.head.insertAdjacentHTML(
 </style>
 `,
 )
+

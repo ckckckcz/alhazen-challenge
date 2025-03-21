@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaitoStore - Laptop Berkualitas dengan Harga Terbaik</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Menggunakan Font Icon Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>KaitoStore</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="checkout.html"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Laptop Berkualitas untuk Kebutuhan Anda</h2>
+                <p>Temukan koleksi laptop terbaik dengan spesifikasi tinggi dan harga terjangkau untuk kebutuhan kerja, pendidikan, dan hiburan.</p>
+                <a href="#products" class="btn">Belanja Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Produk Unggulan Kami</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Laptop Acer Swift 3">
+                    <h3>Acer Swift 3</h3>
+                    <p class="price">Rp 9.999.000</p>
+                    <p class="description">Laptop ringan dengan performa tinggi, layar 14 inci Full HD dan baterai tahan lama.</p>
+                    <a href="product-detail.html?id=1" class="btn">Lihat Detail</a>
+                </div>
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Laptop Lenovo IdeaPad Slim 3">
+                    <h3>Lenovo IdeaPad Slim 3</h3>
+                    <p class="price">Rp 7.499.000</p>
+                    <p class="description">Laptop dengan desain tipis, keyboard nyaman dan performa handal untuk kebutuhan sehari-hari.</p>
+                    <a href="product-detail.html?id=2" class="btn">Lihat Detail</a>
+                </div>
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Laptop ASUS VivoBook 14">
+                    <h3>ASUS VivoBook 14</h3>
+                    <p class="price">Rp 8.299.000</p>
+                    <p class="description">Laptop dengan layar NanoEdge, performa cepat dan desain modern yang stylish.</p>
+                    <a href="product-detail.html?id=3" class="btn">Lihat Detail</a>
+                </div>
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Laptop HP Pavilion 15">
+                    <h3>HP Pavilion 15</h3>
+                    <p class="price">Rp 10.499.000</p>
+                    <p class="description">Laptop dengan layar 15.6 inci, audio premium dan performa tinggi untuk multitasking.</p>
+                    <a href="product-detail.html?id=4" class="btn">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang KaitoStore</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Di KaitoStore, kami memahami pentingnya teknologi yang handal dan mudah digunakan untuk mendukung aktivitas Anda sehari-hari. Selama lebih dari 10 tahun, kami telah menyediakan laptop berkualitas tinggi dengan layanan purna jual yang terpercaya.</p>
+                    <p>Produk kami dipilih dengan memperhatikan kualitas, kemudahan penggunaan, dan dukungan pelanggan yang prima. Kami percaya bahwa teknologi seharusnya mempermudah hidup Anda, bukan mempersulit.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Toko kami">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Jl. Teknologi No. 123, Jakarta Selatan</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>021-5555-1234</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@kaitostore.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Senin-Jumat: 09.00-17.00<br>Sabtu: 10.00-16.00<br>Minggu: Tutup</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nama Anda</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Anda</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan Anda</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>KaitoStore</h2>
+                    <p>Laptop Berkualitas dengan Harga Terbaik</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Tetap Terhubung</h3>
+                    <p>Berlangganan newsletter kami untuk mendapatkan informasi produk terbaru dan penawaran khusus.</p>
+                    <form>
+                        <input type="email" placeholder="Alamat Email Anda">
+                        <button type="submit" class="btn">Langganan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KaitoStore. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

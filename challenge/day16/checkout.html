@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - KaitoStore</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Menggunakan Font Icon Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>KaitoStore</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#products">Produk</a></li>
+                    <li><a href="index.html#about">Tentang Kami</a></li>
+                    <li><a href="index.html#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="checkout.html" class="active"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li>Checkout</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="checkout">
+        <div class="container">
+            <h1 class="page-title">Checkout</h1>
+            
+            <div id="empty-cart-message" class="hidden">
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h2>Keranjang Anda kosong</h2>
+                    <p>Sepertinya Anda belum menambahkan produk ke keranjang.</p>
+                    <a href="index.html#products" class="btn">Lanjutkan Belanja</a>
+                </div>
+            </div>
+
+            <div id="checkout-content" class="checkout-content">
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Keranjang Belanja</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Informasi Pengiriman</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Pembayaran</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Konfirmasi</div>
+                    </div>
+                </div>
+
+                <div class="checkout-sections">
+                    <!-- Step 1: Shopping Cart -->
+                    <div class="checkout-section active" id="cart-section">
+                        <h2>Keranjang Belanja Anda</h2>
+                        <div class="cart-items" id="cart-items">
+                            <!-- Cart items will be added dynamically -->
+                        </div>
+                        <div class="cart-summary">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">Rp 0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Pengiriman:</span>
+                                <span id="cart-shipping">Rp 50.000</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Pajak (10%):</span>
+                                <span id="cart-tax">Rp 0</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="cart-total">Rp 0</span>
+                            </div>
+                        </div>
+                        <div class="cart-actions">
+                            <a href="index.html#products" class="btn btn-secondary">Lanjutkan Belanja</a>
+                            <button class="btn btn-primary" onclick="goToStep(2)">Lanjut ke Pengiriman</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Shipping Details -->
+                    <div class="checkout-section" id="shipping-section">
+                        <h2>Informasi Pengiriman</h2>
+                        <form id="shipping-form" class="checkout-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">Nama Depan</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                    <span class="error-message">Nama depan harus diisi</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Nama Belakang</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                    <span class="error-message">Nama belakang harus diisi</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Alamat Email</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message">Email tidak valid</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Nomor Telepon</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="error-message">Nomor telepon harus diisi</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Alamat Lengkap</label>
+                                <input type="text" id="address" name="address" required>
+                                <span class="error-message">Alamat harus diisi</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">Kota</label>
+                                    <input type="text" id="city" name="city" required>
+                                    <span class="error-message">Kota harus diisi</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="province">Provinsi</label>
+                                    <select id="province" name="province" required>
+                                        <option value="">Pilih Provinsi</option>
+                                        <option value="DKI">DKI Jakarta</option>
+                                        <option value="JB">Jawa Barat</option>
+                                        <option value="JT">Jawa Tengah</option>
+                                        <option value="JI">Jawa Timur</option>
+                                        <option value="BTN">Banten</option>
+                                        <option value="BAL">Bali</option>
+                                        <option value="SUM">Sumatera Utara</option>
+                                        <option value="SUS">Sumatera Selatan</option>
+                                        <option value="SB">Sumatera Barat</option>
+                                        <option value="KAL">Kalimantan Barat</option>
+                                        <option value="KAT">Kalimantan Timur</option>
+                                        <option value="KAS">Kalimantan Selatan</option>
+                                        <option value="SUL">Sulawesi Selatan</option>
+                                        <option value="SUT">Sulawesi Utara</option>
+                                        <option value="NTB">Nusa Tenggara Barat</option>
+                                        <option value="NTT">Nusa Tenggara Timur</option>
+                                        <option value="PAP">Papua</option>
+                                    </select>
+                                    <span class="error-message">Provinsi harus dipilih</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">Kode Pos</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                    <span class="error-message">Kode pos harus diisi</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shipping-method">Metode Pengiriman</label>
+                                <div class="shipping-options">
+                                    <div class="shipping-option">
+                                        <input type="radio" id="standard" name="shipping-method" value="standard" checked>
+                                        <label for="standard">
+                                            <div class="option-name">Pengiriman Reguler</div>
+                                            <div class="option-price">Rp 50.000</div>
+                                            <div class="option-description">Pengiriman dalam 3-5 hari kerja</div>
+                                        </label>
+                                    </div>
+                                    <div class="shipping-option">
+                                        <input type="radio" id="express" name="shipping-method" value="express">
+                                        <label for="express">
+                                            <div class="option-name">Pengiriman Express</div>
+                                            <div class="option-price">Rp 100.000</div>
+                                            <div class="option-description">Pengiriman dalam 1-2 hari kerja</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Kembali ke Keranjang</button>
+                                <button type="button" class="btn btn-primary" onclick="validateShippingAndProceed()">Lanjut ke Pembayaran</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="checkout-section" id="payment-section">
+                        <h2>Informasi Pembayaran</h2>
+                        <form id="payment-form" class="checkout-form">
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                    <label for="credit-card">Kartu Kredit/Debit</label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+                                    <label for="bank-transfer">Transfer Bank</label>
+                                </div>
+                            </div>
+
+                            <div id="credit-card-form">
+                                <div class="form-group">
+                                    <label for="card-name">Nama pada Kartu</label>
+                                    <input type="text" id="card-name" name="card-name" required>
+                                    <span class="error-message">Nama pada kartu harus diisi</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-number">Nomor Kartu</label>
+                                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                                    <span class="error-message">Nomor kartu tidak valid</span>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry-date">Tanggal Kadaluarsa</label>
+                                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                                        <span class="error-message">Format tanggal tidak valid (MM/YY)</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                        <span class="error-message">CVV harus 3 digit</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="bank-transfer-form" class="hidden">
+                                <p>Silakan transfer ke rekening berikut:</p>
+                                <div class="bank-details">
+                                    <p><strong>Bank:</strong> Bank Mandiri</p>
+                                    <p><strong>No. Rekening:</strong> 123-456-789-0</p>
+                                    <p><strong>Atas Nama:</strong> PT KaitoStore Indonesia</p>
+                                </div>
+                                <p>Setelah melakukan pembayaran, Anda akan menerima email konfirmasi.</p>
+                            </div>
+
+                            <div class="order-summary">
+                                <h3>Ringkasan Pesanan</h3>
+                                <div class="summary-row">
+                                    <span>Subtotal:</span>
+                                    <span id="payment-subtotal">Rp 0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Pengiriman:</span>
+                                    <span id="payment-shipping">Rp 50.000</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Pajak (10%):</span>
+                                    <span id="payment-tax">Rp 0</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total:</span>
+                                    <span id="payment-total">Rp 0</span>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Kembali ke Pengiriman</button>
+                                <button type="button" class="btn btn-primary" onclick="validatePaymentAndProceed()">Selesaikan Pesanan</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 4: Confirmation -->
+                    <div class="checkout-section" id="confirmation-section">
+                        <div class="order-confirmation">
+                            <div class="confirmation-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h2>Terima Kasih atas Pesanan Anda!</h2>
+                            <p>Pesanan Anda telah berhasil ditempatkan. Email konfirmasi telah dikirim ke alamat email Anda.</p>
+                            <div class="order-details">
+                                <h3>Detail Pesanan</h3>
+                                <div class="detail-row">
+                                    <span>Nomor Pesanan:</span>
+                                    <span id="order-number">ORD-12345</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Tanggal Pesanan:</span>
+                                    <span id="order-date">21 Maret 2025</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Total Pembayaran:</span>
+                                    <span id="order-total">Rp 0</span>
+                                </div>
+                            </div>
+                            <a href="index.html" class="btn btn-primary">Lanjutkan Belanja</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>KaitoStore</h2>
+                    <p>Laptop Berkualitas dengan Harga Terbaik</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#products">Produk</a></li>
+                        <li><a href="index.html#about">Tentang Kami</a></li>
+                        <li><a href="index.html#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Tetap Terhubung</h3>
+                    <p>Berlangganan newsletter kami untuk mendapatkan informasi produk terbaru dan penawaran khusus.</p>
+                    <form>
+                        <input type="email" placeholder="Alamat Email Anda">
+                        <button type="submit" class="btn">Langganan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KaitoStore. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -61,7 +61,7 @@ img {
   background-color: var(--primary-color);
   color: var(--white);
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -238,7 +238,6 @@ nav ul li a.active {
 
 .menu-toggle:hover {
   color: var(--primary-color);
-  transform: rotate(90deg);
 }
 
 /* Hero Section */
@@ -1029,6 +1028,7 @@ footer {
 }
 
 .cart-item-total {
+  display: none;
   font-weight: 600;
   font-size: 18px;
   color: var(--primary-color);
